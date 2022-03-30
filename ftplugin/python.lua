@@ -1,4 +1,3 @@
--- package.loaded['tmrepl'] = nil
 local tmrepl = require('tmrepl')
 
 tmrepl._run_file['python'] = function()
@@ -23,6 +22,3 @@ end
 vim.api.nvim_set_keymap('n', '<leader>R', "<cmd>lua require('tmrepl').run_file()<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>r', "<cmd>lua require('tmrepl').run_line()<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<leader>r', ":lua require('tmrepl').run_lines()<cr>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<space>r', "<cmd>lua require('tmrepl').run_line()<cr>", {expr = true, noremap = true})
--- vim.api.nvim_set_keymap('v', '<space>r', "<cmd>lua require('tmrepl').run_line()<cr>", {expr = true, noremap = true})
-

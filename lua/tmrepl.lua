@@ -60,6 +60,7 @@ M.left_strip_space = function(lines)
   return table.concat(lines_stripped, '\n')
 end
 
+-- run file
 M.run_file = function()
   local present, _ = pcall(M._run_file[vim.bo.filetype])
   if not present then
@@ -73,7 +74,9 @@ M._run_file = {
     M.send_text(fname)
   end
 }
+--
 
+-- run line
 M.run_line = function()
   local present, _ = pcall(M._run_line[vim.bo.filetype])
   if not present then
@@ -86,7 +89,9 @@ M._run_line = {
     M.send_text(vim.api.nvim_get_current_line())
   end
 }
+--
 
+-- run lines
 M.run_lines = function()
   local present, _ = pcall(M._run_lines[vim.bo.filetype])
   if not present then
@@ -100,6 +105,7 @@ M._run_lines = {
     M.send_text(stripped_lines)
   end,
 }
+--
 
 M.setup()
 
